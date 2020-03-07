@@ -3,7 +3,7 @@ function initMap() {
       center: {lat: 52.205276, lng: 0.119167},
       zoom: 10
     });
-  
+    
   infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
@@ -13,6 +13,12 @@ function initMap() {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: 'You Are Here!'
+              });
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -34,3 +40,5 @@ function initMap() {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+    
