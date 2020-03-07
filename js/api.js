@@ -3,7 +3,7 @@ function initMap() {
       center: {lat: 52.205276, lng: 0.119167},
       zoom: 13
     });
-    
+
   infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
@@ -20,6 +20,16 @@ function initMap() {
                 title: 'You Are Here!'
               });
 
+
+              var circle = new google.maps.Circle({
+                strokeColor: '#0000d8',
+                fillColor: '#0000d8',
+                fillOpacity: 0.1,
+                map: map,
+                center: pos,
+                radius: 2000
+              });
+
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
@@ -27,6 +37,7 @@ function initMap() {
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
+
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
