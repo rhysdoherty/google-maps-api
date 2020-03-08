@@ -47,7 +47,7 @@ function initMap() {
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                title: 'You Are Here!'
+                title: 'You are here!'
             });
 
             circle = new google.maps.Circle({
@@ -56,11 +56,11 @@ function initMap() {
                 fillOpacity: 0.1,
                 map: map,
                 center: pos,
-                radius: 2000
+                radius: 500
             });
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('You are here!');
             infoWindow.open(map);
             map.setCenter(pos);
         }, function () {
