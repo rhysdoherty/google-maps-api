@@ -1,15 +1,17 @@
+// First, this function is called from the Google Maps API.
 function initMap() {
 
+    // Add map to document
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 52.205276, lng: 0.119167 },
+        center: { lat: 52.205276, lng: 0.119167 }, // set to Cambridge by default
         zoom: 13,
         disableDefaultUI: true
     });
 
     var circle = null;
 
+    // Add traffic layers to document
     var trafficLayer = new google.maps.TrafficLayer();
-    trafficLayer.setMap(null);
 
 
     document.getElementById("traffic").addEventListener("click", function () {
