@@ -5,3 +5,16 @@ html, body {
 #map {
     height: 100%;
 }
+
+#traffic {
+    z-index: 999;
+    font-size: 16px;
+    position: fixed;
+    top: 5%;
+    left: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    padding: 5px 10px; 
+    border-radius: 4px;
+    font-family: 'Roboto',Arial,'sans-serif';
+} 
