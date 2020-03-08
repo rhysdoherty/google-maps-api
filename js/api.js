@@ -1,8 +1,23 @@
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 52.205276, lng: 0.119167},
-      zoom: 13
+      zoom: 13,
+      disableDefaultUI: true
     });
+
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(null);
+
+
+    document.getElementById("traffic").addEventListener("click", function(){
+        if (trafficLayer.getMap() == null) {
+            //traffic layer is disabled.. enable it
+            trafficLayer.setMap(map);
+          } else {
+            //traffic layer is enabled.. disable it
+            trafficLayer.setMap(null);
+          }
+      });
 
   infoWindow = new google.maps.InfoWindow;
 
@@ -19,8 +34,7 @@ function initMap() {
                 map: map,
                 title: 'You Are Here!'
               });
-
-
+        
               var circle = new google.maps.Circle({
                 strokeColor: '#0000d8',
                 fillColor: '#0000d8',
@@ -51,5 +65,7 @@ function initMap() {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+      
 
     
