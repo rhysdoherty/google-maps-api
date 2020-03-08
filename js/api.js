@@ -22,8 +22,16 @@ function initMap() {
         }
     });
 
-    document.getElementById("radius").addEventListener("click", function () {
-        circle.setRadius(4000);    
+    document.getElementById("radius500m").addEventListener("click", function () {
+        circle.setRadius(500);    
+    });
+
+    document.getElementById("radius1000m").addEventListener("click", function () {
+        circle.setRadius(1000);    
+    });
+
+    document.getElementById("radius2000m").addEventListener("click", function () {
+        circle.setRadius(2000);    
     });
 
     infoWindow = new google.maps.InfoWindow;
