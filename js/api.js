@@ -1,7 +1,7 @@
-// First, this function is called from the Google Maps API.
+// first, this function is called from the Google Maps API.
 function initMap() {
 
-    // Add map to document
+    // add map to document
     var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 52.205276, lng: 0.119167 }, // set to Cambridge by default
         zoom: 13,
@@ -10,36 +10,42 @@ function initMap() {
 
     var circle = null;
 
-    // Add traffic layers to document
+    // add traffic layers to document
     var trafficLayer = new google.maps.TrafficLayer();
 
-
+    // toggle traffic display
     document.getElementById("traffic").addEventListener("click", function () {
         if (trafficLayer.getMap() == null) {
             // enable traffic layer
             trafficLayer.setMap(map);
-            document.getElementById("traffic").innerHTML = 'Turn traffic off'
+            document.getElementById("traffic").innerHTML = 'Turn traffic off';
         } else {
             // disable traffic layer
             trafficLayer.setMap(null);
-            document.getElementById("traffic").innerHTML = 'Turn traffic on'
+            document.getElementById("traffic").innerHTML = 'Turn traffic on';
         }
     });
 
+    // set radius to 500m when clicked
     document.getElementById("radius500m").addEventListener("click", function () {
         circle.setRadius(500);    
     });
 
+    // set radius to 1000m when clicked
     document.getElementById("radius1000m").addEventListener("click", function () {
         circle.setRadius(1000);    
     });
 
+    // set radius to 2000m when clicked
     document.getElementById("radius2000m").addEventListener("click", function () {
         circle.setRadius(2000);    
     });
 
+
+    // create infoWindow
     infoWindow = new google.maps.InfoWindow;
 
+    // get user location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var pos = {
@@ -47,12 +53,15 @@ function initMap() {
                 lng: position.coords.longitude
             };
 
+            
+            // add Marker to users current position
             var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
                 title: 'You are here!'
             });
 
+            // add circle around users current position
             circle = new google.maps.Circle({
                 strokeColor: '#0000d8',
                 fillColor: '#0000d8',
@@ -62,6 +71,7 @@ function initMap() {
                 radius: 500
             });
 
+            // set marker on users current postion, telling user they're here
             infoWindow.setPosition(pos);
             infoWindow.setContent('You are here!');
             infoWindow.open(map);
@@ -71,11 +81,12 @@ function initMap() {
         });
 
     } else {
-        // Browser doesn't support Geolocation
+        // browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
 }
 
+// handle error if browser doesn't support geolocation
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
@@ -83,6 +94,3 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
-
-
-
