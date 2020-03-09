@@ -16,11 +16,13 @@ function initMap() {
 
     document.getElementById("traffic").addEventListener("click", function () {
         if (trafficLayer.getMap() == null) {
-            //traffic layer is disabled.. enable it
+            // enable traffic layer
             trafficLayer.setMap(map);
+            document.getElementById("traffic").innerHTML = 'Turn traffic off'
         } else {
-            //traffic layer is enabled.. disable it
+            // disable traffic layer
             trafficLayer.setMap(null);
+            document.getElementById("traffic").innerHTML = 'Turn traffic on'
         }
     });
 
@@ -38,7 +40,6 @@ function initMap() {
 
     infoWindow = new google.maps.InfoWindow;
 
-    // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var pos = {
