@@ -9,5 +9,6 @@ This project contains my interpertation of the Google Interview Challange _(opti
 
 ## How to run
 
-1. Download the source code
-2. Open the index.html in Google Chrome
+1. Download the source code as a ZIP file
+2. Unzip the source code
+3. Open the index.html in Google Chrome
