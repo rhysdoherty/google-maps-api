@@ -18,11 +18,11 @@ function initMap() {
         if (trafficLayer.getMap() == null) {
             // enable traffic layer
             trafficLayer.setMap(map);
-            document.getElementById("traffic").innerHTML = 'Turn traffic off';
+            document.getElementById("traffic").innerHTML = 'Hide traffic';
         } else {
             // disable traffic layer
             trafficLayer.setMap(null);
-            document.getElementById("traffic").innerHTML = 'Turn traffic on';
+            document.getElementById("traffic").innerHTML = 'Show traffic';
         }
     });
 
