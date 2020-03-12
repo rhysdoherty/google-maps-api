@@ -1,6 +1,7 @@
 // first, this function is called from the Google Maps API.
 function initMap() {
 
+    // get DIV to inject map
     var mapEl = document.getElementById('map');
 
     if (!mapEl) return;
@@ -47,7 +48,7 @@ function initMap() {
 
 
     // create infoWindow
-    infoWindow = new google.maps.InfoWindow;
+    var infoWindow = new google.maps.InfoWindow;
 
     // get user location
     if (navigator.geolocation) {
