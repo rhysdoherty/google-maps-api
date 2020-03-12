@@ -1,8 +1,12 @@
 // first, this function is called from the Google Maps API.
 function initMap() {
 
+    var mapEl = document.getElementById('map');
+
+    if (!mapEl) return;
+
     // add map to document
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(mapEl, {
         center: { lat: 52.205276, lng: 0.119167 }, // set to Cambridge by default
         zoom: 13,
         disableDefaultUI: true
