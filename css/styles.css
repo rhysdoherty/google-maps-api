@@ -44,3 +44,13 @@ button {
     top: 20%;
     left: 25px;
 }
+
+#terrain {
+    top: 25%;
+    left: 25px;
+} 
+
+#satellite {
+    top: 30%;
+    left: 25px;
+}

@@ -32,6 +32,15 @@ function initMap() {
         }
     });
 
+    document.getElementById("terrain").addEventListener("click", function () {
+        map.setMapTypeId('terrain');
+    });
+
+    document.getElementById("satellite").addEventListener("click", function () {
+        map.setMapTypeId('satellite');
+    });
+   
+
     // set radius to 500m when clicked
     document.getElementById("radius500m").addEventListener("click", function () {
         circle.setRadius(500);    
