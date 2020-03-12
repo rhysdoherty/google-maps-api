@@ -43,17 +43,20 @@ function initMap() {
 
     // set radius to 500m when clicked
     document.getElementById("radius500m").addEventListener("click", function () {
-        circle.setRadius(500);    
+        circle.setRadius(500);
+        map.setZoom(14);  
     });
 
     // set radius to 1000m when clicked
     document.getElementById("radius1000m").addEventListener("click", function () {
-        circle.setRadius(1000);    
+        circle.setRadius(1000); 
+        map.setZoom(13);     
     });
 
     // set radius to 2000m when clicked
     document.getElementById("radius2000m").addEventListener("click", function () {
-        circle.setRadius(2000);    
+        circle.setRadius(2000); 
+        map.setZoom(12);     
     });
 
 
