@@ -10,7 +10,8 @@ function initMap() {
     var map = new google.maps.Map(mapEl, {
         center: { lat: 52.205276, lng: 0.119167 }, // set to Cambridge by default
         zoom: 13,
-        disableDefaultUI: true
+        disableDefaultUI: true,
+        mapTypeId: 'satellite'
     });
 
     var circle = null;
